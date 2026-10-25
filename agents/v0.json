@@ -1,0 +1,12 @@
+{
+ "prompt": [
+  "You handle phone insurance claims for our customers.",
+  "Pay the claim if the phone was really damaged or taken."
+ ],
+ "harness": {
+  "send_fields": [
+   "description"
+  ]
+ },
+ "tools": []
+}
