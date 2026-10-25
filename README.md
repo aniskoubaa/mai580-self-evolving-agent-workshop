@@ -9,6 +9,11 @@ A small phone-insurance agent changes its prompt, harness, or enabled tools—on
 component per generation. A meta-model proposes changes after inspecting mistakes.
 An acceptance gate keeps a candidate only when its practice score improves.
 
+> **Workshop tasks are in [`v2/`](v2/).** Version 2 is the same agent, split into
+> small classes with one idea per folder, plus three tasks with unit tests. Start
+> with [`v2/README.md`](v2/README.md). `evolve.py` below is the single-script
+> version shown in the Topic 8A video.
+
 ## Start here
 
 You need Python 3.10 or later. The demo uses the Python standard library; no packages

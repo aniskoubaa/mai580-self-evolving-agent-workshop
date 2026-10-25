@@ -7,3 +7,4 @@ __pycache__/
 .venv/
 cache/
 agents/v[1-9]*.json
+v2/agents/v[1-9]*.json
