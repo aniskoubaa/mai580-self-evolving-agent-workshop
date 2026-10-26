@@ -70,7 +70,8 @@ Each task is one file with a `TODO`, and one test that tells you when you are do
 | 2 | `gate/safety_gate.py` | A gate that rejects any candidate that newly approves a claim it should deny | `python3 -m unittest tests.test_task2_gate` |
 | 3 | `loop/held_out_exam.py` | An exam that can be opened only once | `python3 -m unittest tests.test_task3_exam` |
 
-Run every test at once with `python3 -m unittest`. Before you start, only
+Run every test at once with `python3 -m unittest`, **from inside `v2/`**. Run from
+anywhere else, it finds no tests ("NO TESTS RAN") or cannot import the code. Before you start, only
 `test_replay` passes; the task tests fail with "TASK n".
 
 After Task 2, run the loop with your gate:

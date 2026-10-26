@@ -10,10 +10,11 @@
 Standard library only. Without --fresh it replays data/recorded_run.json.
 """
 import argparse
+import os
 import pathlib
 import sys
 
-from agent import AgentConfig, Harness, LLM
+from agent import AgentConfig, Harness, LLM, ReplayMissing
 from claims import ClaimSet, Policy
 from gate import SafetyGate, ScoreGate
 from loop.console import Console, G, X
@@ -66,7 +67,18 @@ def main():
 
 
 if __name__ == "__main__":
+    if os.name == "nt":
+        os.system("")                              # lets older Windows consoles show the colours
+    try:
+        sys.stdout.reconfigure(errors="replace")   # a symbol the console cannot show becomes "?"
+    except AttributeError:
+        pass
     try:
         main()
     except KeyError as e:
         sys.exit(f"Missing {e}: set GEMINI_API_KEY, or run without --fresh to replay the recording.")
+    except ReplayMissing:
+        sys.exit("The recording has no answer for this request, because the agent or the claims "
+                 "were changed.\nTo replay the class run again:  git restore agents/v0.json  "
+                 "then  python3 main.py --reset\nTo try your change for real:  python3 main.py --fresh  "
+                 "(needs GEMINI_API_KEY)")
