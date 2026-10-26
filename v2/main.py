@@ -7,7 +7,7 @@
   python3 main.py --fresh    call Gemini for real (needs GEMINI_API_KEY)
   python3 main.py --gate safety   use your SafetyGate (Task 2) instead of ScoreGate
 
-Standard library only. Without --fresh it replays ../data/recorded_run.json.
+Standard library only. Without --fresh it replays data/recorded_run.json.
 """
 import argparse
 import pathlib
@@ -22,7 +22,7 @@ from meta_agent import MetaAgent
 from tools import ToolLibrary
 
 HERE = pathlib.Path(__file__).parent
-DATA = HERE.parent / "data"                 # the same claims and recording as version 1
+DATA = HERE / "data"                        # the claims and the class recording
 AGENTS = HERE / "agents"
 CACHE = HERE / "cache" / "responses.json"
 

@@ -14,7 +14,7 @@ from loop.evolution_loop import EvolutionLoop
 from meta_agent import MetaAgent
 from tools import ToolLibrary
 
-DATA = pathlib.Path(__file__).parent.parent.parent / "data"
+DATA = pathlib.Path(__file__).parent.parent / "data"
 
 
 class TestReplay(unittest.TestCase):

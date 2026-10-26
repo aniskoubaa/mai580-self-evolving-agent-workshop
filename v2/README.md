@@ -12,7 +12,8 @@ python3 main.py --reset    # back to v0 only
 ```
 
 No packages to install and no API key needed: the recorded class run is replayed
-from `../data/recorded_run.json`.
+from `data/recorded_run.json`. The `v2/` folder is self-contained:
+you can copy it anywhere and it still runs.
 
 ## Where each idea lives
 
